@@ -1,0 +1,175 @@
+/* fons................................................................... */
+@import url('https://fonts.googleapis.com/css2?family=Gruppo&display=swap');
+
+/* init................................................................... */
+:root {
+  --skydia: 'Gruppo', cursive;
+}
+
+* {
+  font-family: var(--skydia);
+}
+
+.main-enter {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video-bg {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+
+.wrapper {
+  text-align: center;
+  z-index: 1;
+}
+
+.wrapper h1 {
+  font-size: 14rem;
+  font-family: var(--skydia);
+}
+
+.wrapper p {
+  font-size: 4rem;
+  color: #fde08180;
+}
+
+.enter-wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.enter-wrapper * {
+  border-color: #fde081;
+}
+
+.enter-wrapper button {
+  min-width: 300px;
+  min-height: 60px;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2rem;
+  color: #fde081;
+  background-color: #70707033;
+  border: 2px solid;
+  border-radius: 1000px;
+  box-shadow: 2px 2px 6px #54290d;
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  position: relative;
+  top: 80px;
+  font-family: var(--skydia);
+}
+
+.enter-wrapper button:hover {
+  background-color: #fde08164;
+  transition: 1s ease-in-out;
+  transform: translateY(-5px);
+}
+
+.enter-wrapper button::before {
+  content: '';
+  border-radius: 1000px;
+  min-width: calc(300px + 12px);
+  min-height: calc(60px + 12px);
+  border: 8px solid;
+  box-shadow: 0 0 60px #fde081;
+  position: absolute;
+  left: -8px;
+  top: -8px;
+  opacity: 0;
+  transition: all 0.8s ease-in-out;
+}
+
+.enter-wrapper button:hover::before, .enter-wrapper button:focus::before {
+  opacity: 1;
+}
+
+.enter-wrapper button::after {
+  content: '';
+  width: 30px; height: 30px;
+  border-radius: 100%;
+  border: 1px solid #fde0814a;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring 2s infinite;
+}
+
+.enter-wrapper button:hover::after, .enter-wrapper button:focus::after {
+  animation: none;
+  display: none;
+}
+
+.bottom-wrapper {
+  text-align: center;
+}
+
+.bottom-wrapper small {
+  color: #fde08135;
+  font-family: var(--skydia);
+}
+
+/* keyframes................................................................... */
+@keyframes ring {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+}
+
+/* @media................................................................... */
+
+@media screen and (max-width: 992px) {
+  .wrapper h1 {
+    font-size: 8rem;
+    font-family: var(--skydia);
+    margin-bottom: 5rem;
+  }
+
+  .wrapper p {
+    margin-bottom: 5rem;
+  }
+
+  .wrapper {
+    margin-bottom: 20rem;
+  }
+}
+
+@media screen and (max-width: 485px) {
+  .wrapper h1 {
+    font-size: 6rem;
+    font-family: var(--skydia);
+  }
+  
+  .wrapper {
+    margin-bottom: 10rem;
+    margin-top: 10rem;
+  }
+
+  .wrapper p {
+    font-size: 3rem;
+  }
+
+  .enter-wrapper button {
+    font-size: 1.5rem;
+  }
+}
