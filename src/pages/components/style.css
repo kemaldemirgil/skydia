@@ -1,0 +1,55 @@
+/* fons................................................................... */
+@import url('https://fonts.googleapis.com/css2?family=Gruppo&family=Josefin+Slab:wght@600&display=swap');
+
+:root {
+  --skydia: 'Gruppo', cursive;
+  --def: 'Josefin Slab', serif;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #dadada83;
+}
+
+li {
+  float: left;
+}
+
+li, li a {
+  transition: 0.5s ease-in-out;
+}
+
+li a {
+  display: block;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-family: var(--def);
+  border-bottom: 2px solid #dadada83;
+  transition: 0.5s ease-in-out;
+}
+
+.skydia {
+  font-family: var(--skydia);
+  letter-spacing: 3px;
+}
+
+li:hover {
+  background-color: #4f4f4f;
+  transition: 0.5s ease-in-out;
+}
+
+li a:hover {
+  color: #fde081;
+  border-bottom: 2px solid #fde081;;
+  transition: 0.5s ease-in-out;
+}
+
+.right {
+  float: right;
+}

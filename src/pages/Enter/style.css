@@ -6,7 +6,7 @@
   --skydia: 'Gruppo', cursive;
 }
 
-* {
+.wrapper, .bottom-wrapper {
   font-family: var(--skydia);
 }
 
@@ -43,10 +43,10 @@
 }
 
 .enter-wrapper {
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: default;
 }
 
 .enter-wrapper * {
@@ -148,10 +148,6 @@
   .wrapper p {
     margin-bottom: 5rem;
   }
-
-  .wrapper {
-    margin-bottom: 20rem;
-  }
 }
 
 @media screen and (max-width: 485px) {
@@ -161,7 +157,6 @@
   }
   
   .wrapper {
-    margin-bottom: 10rem;
     margin-top: 10rem;
   }
 

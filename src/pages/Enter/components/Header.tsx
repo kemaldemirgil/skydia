@@ -10,7 +10,7 @@ const Header = () => {
       </div>
       <div className="bottom-wrapper">
         <Link to="/search" className="enter-wrapper"><button>Enter</button></Link>
-        <small>created with ☮️ &amp; ❤️</small>
+      <small>created with ☮️ &amp; ❤️</small>
       </div>
     </div>
   )
