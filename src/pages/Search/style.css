@@ -1,9 +1,58 @@
+/* fons................................................................... */
+@import url('https://fonts.googleapis.com/css2?family=Gruppo&family=Josefin+Slab:wght@600&display=swap');
+
+:root {
+  --skydia: 'Gruppo', cursive;
+  --def: 'Josefin Slab', serif;
+}
+
 /* Body............................................................. */
 .body-container {
   min-height: 100vh;
+  display: flex;
+}
+
+.body-container2 {
+  min-height: 100vh;
+  display: flex;
+  background: linear-gradient(-45deg, #ffffff, #f2f2f2, #f3f3f3, #ffffff);
+  background-size: 400% 400%;
+  animation: gradient2 30s ease infinite;
+}
+
+.body-container2 * {
+  font-family: var(--def);
 }
 
 .body-wrapper {
-  padding-top: 10rem;
+  margin-top: 5rem;
+}
 
+.body-wrapper h1 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 4rem;
+}
+
+.search-wrapper {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.search-wrapper * {
+  font-family: var(--def) !important;
+}
+
+@keyframes gradient2 {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }

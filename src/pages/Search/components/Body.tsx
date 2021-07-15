@@ -1,11 +1,15 @@
-import { Container, Input } from 'semantic-ui-react'
+import { Container } from 'semantic-ui-react'
 import React from 'react'
 
 const Body: React.FC = () => {
   return (
-    <div className="body-container">
+    <div className="body-container2">
       <Container className="body-wrapper">
-      <Input action='Search' placeholder='Search...' />
+        <h1>Search for a city</h1>
+        <div className="ui action input search-wrapper">
+          <input type="text" placeholder="Search..."/>
+          <button className="ui button">Search</button>
+        </div>
       </Container>
     </div>
   )
