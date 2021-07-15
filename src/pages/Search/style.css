@@ -15,7 +15,7 @@
 .body-container2 {
   min-height: 100vh;
   display: flex;
-  background: linear-gradient(-45deg, #ffffff, #f2f2f2, #f3f3f3, #ffffff);
+  background: linear-gradient(-45deg, #e8e8e8, #f2f2f2, #f3f3f3, #e4e4e4);
   background-size: 400% 400%;
   animation: gradient2 30s ease infinite;
 }
@@ -28,7 +28,7 @@
   margin-top: 5rem;
 }
 
-.body-wrapper h1 {
+.title-desc {
   text-align: center;
   margin-bottom: 3rem;
   font-size: 4rem;
@@ -45,9 +45,23 @@
   font-family: var(--def) !important;
 }
 
+.search-wrapper input {
+  max-width: 30rem !important;
+}
+
 
 .weather-container h1 {
   padding-top: 5rem;
+  font-size: 5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.fav-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
 }
 
 .current-weather {
@@ -57,9 +71,39 @@
   flex-direction: column;
 }
 
+.content p {
+  font-size: 2rem;
+}
+
+.details {
+  color: #6f0000;
+}
+
 .toast {
-  margin-top: 5rem;
+  margin-top: 2rem;
   height: 10rem;
+}
+
+.toast * {
+  font-size: 1rem;
+}
+
+.modal-title span {
+  font-size: 4rem;
+  margin-top: 1rem;
+  font-weight: 200;
+  font-family: var(--skydia);
+}
+
+.modal-desc {
+  font-family: var(--def);
+  text-align: center;
+}
+
+.modal-button {
+  display: flex;
+  text-align: center;
+  justify-content: center;
 }
 
 @keyframes gradient2 {
@@ -72,4 +116,24 @@
 	100% {
 		background-position: 0% 50%;
 	}
+}
+
+/* @media................................................................... */
+
+@media screen and (max-width: 635px) {
+  .toast * p {
+    font-size: 0.9rem;
+  }
+  .weather-container h1 {
+    font-size: 3rem;
+  }
+  .content p {
+    font-size: 1.5rem;
+  }
+  .title-desc {
+    font-size: 2rem;
+  }
+  .search-wrapper input {
+    width: 30% !important;
+  }
 }
