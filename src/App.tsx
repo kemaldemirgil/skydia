@@ -3,11 +3,12 @@ import Enter from './pages/Enter/index'
 import Saved from './pages/Saved/index';
 import Search from './pages/Search/index';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { FC } from 'react';
 
 
 
 
-function App() {
+const App: FC = () => {
   return (
     <Router>
       <div className="main">

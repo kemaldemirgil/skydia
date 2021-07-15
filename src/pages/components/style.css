@@ -12,6 +12,7 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color: #dadada83;
+  border-bottom: 2px solid #dadada83;
 }
 
 li {
@@ -30,7 +31,7 @@ li a {
   text-decoration: none;
   font-size: 1.5rem;
   font-family: var(--def);
-  border-bottom: 2px solid #dadada83;
+  border-bottom: 2px solid #ececec;
   transition: 0.5s ease-in-out;
 }
 
@@ -40,14 +41,15 @@ li a {
 }
 
 li:hover {
-  background-color: #4f4f4f;
+  background-color: #bababa;
   transition: 0.5s ease-in-out;
 }
 
 li a:hover {
-  color: #fde081;
-  border-bottom: 2px solid #fde081;;
+  color: black;
+  border-bottom: 2px solid #fde081;
   transition: 0.5s ease-in-out;
+  text-decoration: underline;
 }
 
 .right {

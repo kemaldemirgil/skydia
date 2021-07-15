@@ -11,7 +11,7 @@ export default class Navbar extends Component {
           {window.location.pathname === "/saved" ? (
             <li className="right"><Link to="/search">Search</Link></li>
             ) : (
-            <li className="right"><Link to="/saved">Favorites</Link></li>
+            <li className="right"><Link to="/saved">My Favourites</Link></li>
           )}
         </ul>
       </div>

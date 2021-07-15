@@ -45,6 +45,23 @@
   font-family: var(--def) !important;
 }
 
+
+.weather-container h1 {
+  padding-top: 5rem;
+}
+
+.current-weather {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.toast {
+  margin-top: 5rem;
+  height: 10rem;
+}
+
 @keyframes gradient2 {
 	0% {
 		background-position: 0% 50%;
