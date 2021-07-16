@@ -33,7 +33,7 @@ const Body: FC = () => {
           setOpen(true)
         }
         const resData: WeatherData = await res.json();
-        console.log(resData);
+        // console.log(resData);
         localStorage.setItem('searchedWeatherData', JSON.stringify(resData));
       }catch(err) {
         return console.log(err)

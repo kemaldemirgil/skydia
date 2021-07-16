@@ -3,20 +3,45 @@ import { WeatherData } from '../../../types'
 import { SemanticToastContainer, toast } from 'react-semantic-toasts';
 import { Label, Grid, Icon } from 'semantic-ui-react'
 
-
 type Props = {
   data: WeatherData
 }
 
-const toaster = (place:string) => {
-  toast({
-    type: 'error',
-    icon: 'heart',
-    title: 'Added to Favourites',
-    description: `${place} has been added your favourites!`,
-    animation: 'bounce',
-    time: 2000
-  });
+let storedFavCities: any = localStorage.getItem("fav-city");
+let cities: any = JSON.parse(storedFavCities)
+let cityNames: any = [];
+
+console.log(cities)
+if (storedFavCities !== null) {
+  for (let i = 0; i < cities.length; i++) {
+    cityNames.push(cities[i]);
+  }
+}
+
+const favButton = (place:string) => {
+  console.log(place)
+  console.log(cityNames)
+  if ((cities !== null && cities.includes(place)) || cityNames.includes(place)) {
+    toast({
+      type: 'warning',
+      icon: 'exclamation triangle',
+      title: 'Already have that city',
+      description: `Try a different city`,
+      animation: 'tada',
+      time: 2000
+    });
+  } else {
+    cityNames.push(place)
+    localStorage.setItem(`fav-city`, JSON.stringify(cityNames))
+    toast({
+      type: 'error',
+      icon: 'heart',
+      title: 'Added to Favourites',
+      description: `${place} has been added your favourites!`,
+      animation: 'fly down',
+      time: 2000
+    });
+  }
 }
 
 const Weather: FC<Props>  = ({data}) => {
@@ -32,7 +57,7 @@ const Weather: FC<Props>  = ({data}) => {
   } else {
     comment = "Don't forget your sunglasses🕶️"
   }
-  console.log(data)
+  // console.log(data)
   return (
     <div className="weather-container">
       <h1><Icon name='map marker alternate' size='tiny' />{data.name}  
@@ -40,7 +65,7 @@ const Weather: FC<Props>  = ({data}) => {
         </span>
       </h1>
       <div className="fav-button">
-        <button className="ui red big button" onClick={() => toaster(data.name)}><Icon name='heart' size='small' /> Save to Favourites</button>
+        <button className="ui red big button" onClick={() => favButton(data.name)}><Icon name='heart' size='small' /> Save to Favourites</button>
       </div>
       <div className="current-weather">
         <div className="ui red fluid card">
