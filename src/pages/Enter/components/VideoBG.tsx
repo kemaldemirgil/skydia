@@ -1,7 +1,8 @@
-import React from 'react'
+// imports..........................
+import { FC } from 'react'
 import bg from "../../../assets/sky.mp4"
 
-const VideoBG = () => {
+const VideoBG: FC = () => {
   return (
     <div>
       <video autoPlay muted loop className="video-bg">

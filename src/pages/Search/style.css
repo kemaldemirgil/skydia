@@ -1,26 +1,26 @@
-/* fons................................................................... */
+/* fonts...............................*/
 @import url('https://fonts.googleapis.com/css2?family=Gruppo&family=Josefin+Slab:wght@600&display=swap');
 
+/* variables............................... */
 :root {
   --skydia: 'Gruppo', cursive;
   --def: 'Josefin Slab', serif;
 }
 
-/* Body............................................................. */
 .body-container {
   min-height: 100vh;
   display: flex;
 }
 
-.body-container2 {
+.search-body-container {
   min-height: 100vh;
   display: flex;
-  background: linear-gradient(-45deg, #dcdcdc, #f2f2f2, #f3f3f3, #c2c2c2);
+  background: linear-gradient(-45deg, #e4e4e4, #d3d3d3, #f2f2f2, #e4e4e4);
   background-size: 400% 400%;
   animation: gradient2 15s ease infinite;
 }
 
-.body-container2 * {
+.search-body-container * {
   font-family: var(--def);
 }
 
@@ -48,7 +48,6 @@
 .search-wrapper input {
   max-width: 30rem !important;
 }
-
 
 .weather-container h1 {
   padding-top: 5rem;
@@ -117,6 +116,7 @@
   animation: bounce 2s infinite;
 }
 
+/* @keyframes...................... */
 @keyframes gradient2 {
 	0% {
 		background-position: 0% 50%;
@@ -147,8 +147,7 @@
   }
 }
 
-/* @media................................................................... */
-
+/* @media........................... */
 @media screen and (max-width: 635px) {
   .toast * p {
     font-size: 0.9rem;

@@ -1,7 +1,8 @@
-import React from 'react'
+// imports..........................
+import { FC } from 'react'
 import { Link } from 'react-router-dom';
 
-const Header = () => {
+const Header: FC = () => {
   return (
     <div>
       <div className="wrapper">
@@ -10,7 +11,7 @@ const Header = () => {
       </div>
       <div className="bottom-wrapper">
         <Link to="/search" className="enter-wrapper" data-aos="zoom-in"><button>Enter</button></Link>
-      <small data-aos="zoom-out-down">created with ☮️ &amp; ❤️</small>
+        <small data-aos="zoom-out-down">created with ☮️ &amp; ❤️</small>
       </div>
     </div>
   )

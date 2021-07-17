@@ -1,50 +1,57 @@
+// imports.........................
 import { Container, Button, Header, Icon, Modal } from 'semantic-ui-react'
-import React, { FC, FormEvent, useState } from 'react'
+import { FC, FormEvent, useState } from 'react'
 import { WeatherData } from '../../../types';
 import Weather from './Weather'
 
+// Error response types
 interface Error {
   cod: string;
   message: string;
 }
 
-
 const Body: FC = () => {
-    const [city, setCity] = useState("");
-    const [open, setOpen] = useState(false)
-    
-    const localData: any = localStorage.getItem("searchedWeatherData");
-    const localMainData: any = JSON.parse(localData);
-
-    const formChange = (e: FormEvent<HTMLInputElement>) => {
-      setCity(e.currentTarget.value);
-    }
+  // City input state
+  const [city, setCity] = useState("");
+  // Modal state
+  const [open, setOpen] = useState(false)
+  // Get weather data from local storage
+  const localData: any = localStorage.getItem("searchedWeatherData");
+  const localMainData: any = JSON.parse(localData);
+  // On form input change, set state accordingly
+  const formChange = (e: FormEvent<HTMLInputElement>) => {
+    setCity(e.currentTarget.value);
+  }
   
-    const formSubmit = async (e: FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
-      if (city.trim() === "") {
+  // Submit form
+  const formSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // If input is empty display modal
+    if (city.trim() === "") {
+      setOpen(true)
+    }
+    try {
+      // Fetch weather data
+      const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${process.env.REACT_APP_API_KEY}`);
+      // If response error, display modal
+      if (!res.ok) {
+        const resData: Error = await res.json();
+        console.log(resData.message);
         setOpen(true)
       }
-      try {
-        const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${process.env.REACT_APP_API_KEY}`);
-        if (!res.ok) {
-          const resData: Error = await res.json();
-          console.log(resData.message);
-          setOpen(true)
-        }
-        const resData: WeatherData = await res.json();
-        // console.log(resData);
-        localStorage.setItem('searchedWeatherData', JSON.stringify(resData));
-      }catch(err) {
-        return err
-      }
-      setCity("")
+      const resData: WeatherData = await res.json();
+      // console.log(resData);
+      // Set weather data to local storage
+      localStorage.setItem('searchedWeatherData', JSON.stringify(resData));
+    }catch(err) {
+      return err
     }
-    
-
+    // Set input to empty
+    setCity("")
+  }
   return (
     <>
-      <div className="body-container2">
+      <div className="search-body-container">
         <Container className="body-wrapper">
           <h1 className="title-desc" data-aos="zoom-in-down">Search for a city</h1>
           <form className="ui action huge input search-wrapper" data-aos="zoom-in" onSubmit={formSubmit}>
@@ -78,8 +85,6 @@ const Body: FC = () => {
             </Modal.Actions>
           </Modal.Content>
         </Modal>
-
-
       </div>
     </>
   )

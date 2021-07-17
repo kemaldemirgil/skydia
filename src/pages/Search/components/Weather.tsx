@@ -1,16 +1,22 @@
+// imports..........................
 import { FC } from 'react'
 import { WeatherData } from '../../../types'
 import { SemanticToastContainer, toast } from 'react-semantic-toasts';
 import { Label, Grid, Icon } from 'semantic-ui-react'
 
-type Props = {
-  data: WeatherData
-}
+// Setting city variables globally
 let storedFavCities: any;
 let cities: Array<string>;
 let cityNames: Array<string> = [];
 
+// Weather data props
+type Props = {
+  data: WeatherData
+}
+
+// Add city to favourites
 const favButton = (place:string) => {
+  // If city exists already, notify user, else set favourite city to local storage
   if ((cities !== null && cities.includes(place)) || cityNames.includes(place)) {
     toast({
       type: 'warning',
@@ -37,21 +43,23 @@ const favButton = (place:string) => {
 const Weather: FC<Props>  = ({data}) => {
 
   // console.log(data)
+  let comment: string;
+  // Get favourite cities from local storage
   storedFavCities = localStorage.getItem("fav-city");
   cities = JSON.parse(storedFavCities)
+  // Set container for cities
   cityNames = [];
-  let comment: string;
-
+  // If there are favuorite cities, assign them to the container
   if (storedFavCities !== null) {
     for (let i = 0; i < cities.length; i++) {
       cityNames.push(cities[i]);
     }
   }
-  
+  // If no city has been searched yet, don't display card
   if (data === null) {
     return (null)
   }
-
+  // Set weather data comments depending on temp
   if (data.main.temp <= 0) {
     comment = "Dont't forget to wear a jacket🧥";
   } else if (data.main.temp > 0 && data.main.temp <= 25) {

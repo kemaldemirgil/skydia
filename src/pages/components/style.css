@@ -1,6 +1,7 @@
-/* fons................................................................... */
+/* fonts....................... */
 @import url('https://fonts.googleapis.com/css2?family=Gruppo&family=Josefin+Slab:wght@600&display=swap');
 
+/* variables................... */
 :root {
   --skydia: 'Gruppo', cursive;
   --def: 'Josefin Slab', serif;

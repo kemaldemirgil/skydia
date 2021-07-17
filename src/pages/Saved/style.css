@@ -1,11 +1,11 @@
-/* fons................................................................... */
+/* fonts............................ */
 @import url('https://fonts.googleapis.com/css2?family=Gruppo&family=Josefin+Slab:wght@600&display=swap');
 
+/* variables............................ */
 :root {
   --skydia: 'Gruppo', cursive;
   --def: 'Josefin Slab', serif;
 }
-
 
 .favourite-cities-container {
   background: linear-gradient(-45deg, #ee525225, #3c72e72a, #23cfd564, #23d5ab2a);
@@ -64,7 +64,7 @@
 	font-family: var(--def) !important;
 }
 
-
+/* @keyframes............................ */
 @keyframes gradient {
 	0% {
 		background-position: 0% 50%;
@@ -83,6 +83,7 @@
   100% { color: #00d9ff; }
 }
 
+/* @media..................................... */
 @media screen and (max-width: 675px) {
   .fav-wrapper div h1 {
 		font-size: 3rem;

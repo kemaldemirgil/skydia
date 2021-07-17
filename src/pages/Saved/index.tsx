@@ -1,8 +1,10 @@
+// imports..........................
+import { FC } from 'react'
 import './style.css'
 import Navbar from "../components/Navbar"
 import Body from "./components/Body"
 
-const index = () => {
+const index: FC = () => {
   return (
     <>
       <Navbar />

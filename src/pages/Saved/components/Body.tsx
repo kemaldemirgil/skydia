@@ -1,7 +1,16 @@
-import { useState } from 'react'
+// imports.....................................
+import { useState, FC } from 'react'
 import { WeatherData } from '../../../types';
 import { Dropdown, DropdownItemProps, Button, Icon, Card, Image } from 'semantic-ui-react'
 
+// Don't display card on reload
+let displayCard = false;
+
+// Set weather additional data to empty
+let tempComment: string = "";
+let tempImg: string = "";
+
+// Empty data template for state
 let weatherTemplate = {
   name: "",
   sys: {
@@ -18,16 +27,19 @@ let weatherTemplate = {
     speed: ""
   }
 };
-let displayCard = false;
 
-let tempComment: string = "";
-let tempImg: string = "";
-const Body = () => {
+const Body: FC = () => {
+  // Set state to empty
   const [citiesData, setCitiesData] = useState(weatherTemplate)
+
+  // Set dropdown favourite city options
   const favouriteCities: DropdownItemProps[] | { text: string; value: string; key: string; }[] | undefined = [];
+
+  // Get favourite cities from local storage
   let storedFavCities: any = localStorage.getItem("fav-city");
   let cities: Array<string> = JSON.parse(storedFavCities)
 
+  // Set local storage favourite cities to dropdown options
   if (cities !== null) {
     cities.forEach(element => {
       let cityObj = {
@@ -39,8 +51,11 @@ const Body = () => {
     });
   }
 
+  // Get weather
   const getWeather = async (e:any, {value}: any) => {
+    // Fetch data
     const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${value}&units=metric&appid=${process.env.REACT_APP_API_KEY}`);
+    // If faulty response, display error, else display favourite city card and set additional comments for depending on the temp
     if (!res.ok) {
       console.log(res);
     } else {
@@ -66,11 +81,13 @@ const Body = () => {
       setCitiesData(data)
     }
   }
-
+  // Delete city
   const deleteCity = () => {
     alert(`${citiesData.name} has been removed from favourites!`)
+    // Filter out the city that's been deleted
     cities = cities.filter(e => e !== `${citiesData.name}`);
     // console.log(cities)
+    // Set dropdown options to zero then re-calculate the cities
     favouriteCities.length = 0
     cities.forEach(element => {
       let cityObj = {
@@ -80,7 +97,7 @@ const Body = () => {
       }
       favouriteCities.push(cityObj)
     });
-    // console.log(`${cities}`)
+    // Update local storage favourite cities
     localStorage.setItem(`fav-city`, JSON.stringify(cities))
     if (cities.length === 0) {
       displayCard = false
@@ -109,26 +126,28 @@ const Body = () => {
           <div className="fav-wrapper">
             <div className="fav-weather-data" data-aos="flip-down">
               <Card fluid>
-                <Image src={tempImg} wrapped ui={false} data-aos="zoom-in" />
+                <Image src={tempImg} alt="Weather Image" wrapped ui={false} data-aos="zoom-in" />
                 <Card.Content>
-                  <Card.Header className="fav-city-title" data-aos="fade-down-right"><Icon name='map marker alternate' size='small' />{citiesData.name} {citiesData.sys.country}</Card.Header>
+                  <Card.Header className="fav-city-title" data-aos="fade-down-right">
+                    <Icon name='map marker alternate' size='small'/>{citiesData.name} {citiesData.sys.country}
+                  </Card.Header>
                   <Card.Meta>
                     <span className='date' data-aos="fade-up-left">{tempComment}</span>
                   </Card.Meta>
                   <Card.Description>
-                    <p data-aos="fade-up-right"><Icon name='circle outline' size='tiny' />Current Temp: {citiesData.main.temp}<sup>&#8451;</sup></p>
-                    <p data-aos="fade-down-left"><Icon name='sun' size='small' />Max Temp: {citiesData.main.temp_max}<sup>&#8451;</sup></p>
-                    <p data-aos="fade-up-right"><Icon name='snowflake' size='small' />Min Temp: {citiesData.main.temp_min}<sup>&#8451;</sup></p>
-                    <p data-aos="fade-down-left"><Icon name='circle outline' size='tiny' />Feels Like: {citiesData.main.feels_like}<sup>&#8451;</sup></p>
-                    <p data-aos="fade-down-right"><Icon name='rain' size='small' />Humidity: {citiesData.main.humidity}%</p>
-                    <p data-aos="fade-up-left"><Icon name='leaf' size='small' />Wind Speed: {citiesData.wind.speed}m/s</p>
+                    <p data-aos="fade-up-right"><Icon name='circle outline' size='tiny'/>Current Temp: {citiesData.main.temp}<sup>&#8451;</sup></p>
+                    <p data-aos="fade-down-left"><Icon name='sun' size='small'/>Max Temp: {citiesData.main.temp_max}<sup>&#8451;</sup></p>
+                    <p data-aos="fade-up-right"><Icon name='snowflake' size='small'/>Min Temp: {citiesData.main.temp_min}<sup>&#8451;</sup></p>
+                    <p data-aos="fade-down-left"><Icon name='circle outline' size='tiny'/>Feels Like: {citiesData.main.feels_like}<sup>&#8451;</sup></p>
+                    <p data-aos="fade-down-right"><Icon name='rain' size='small'/>Humidity: {citiesData.main.humidity}%</p>
+                    <p data-aos="fade-up-left"><Icon name='leaf' size='small'/>Wind Speed: {citiesData.wind.speed}m/s</p>
                   </Card.Description>
                 </Card.Content>
                 <Card.Content extra>
-                <Button fluid color="red" icon onClick={deleteCity} data-aos="fade-down-right">
-                  <Icon name='trash' />
-                  Delete City
-                </Button>
+                  <Button fluid color="red" icon onClick={deleteCity} data-aos="fade-down-right">
+                    <Icon name='trash' />
+                    Delete City
+                  </Button>
                 </Card.Content>
               </Card>
               <small data-aos="zoom-in"><a href={`https://www.accuweather.com/en/search-locations?query=${citiesData.name}`} target="_blank" rel="noreferrer">Click for more information</a></small>

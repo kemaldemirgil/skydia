@@ -1,3 +1,4 @@
+// Weather data object types
 export interface Weather {
   description: string;
   icon: string;
@@ -5,6 +6,7 @@ export interface Weather {
   main: string;
 }
 
+// Weather data types
 export interface WeatherData {
   base: string;
   clouds: {

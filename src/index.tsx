@@ -1,6 +1,7 @@
-import React from 'react';
+// imports..........................
 import ReactDOM from 'react-dom';
 import App from './App';
+// semantic-ui......................
 import 'semantic-ui-css/semantic.min.css'
 
 ReactDOM.render(
