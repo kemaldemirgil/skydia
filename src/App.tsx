@@ -10,7 +10,7 @@ import { FC } from 'react';
 
 const App: FC = () => {
   return (
-    <Router basename="/">
+    <Router basename="/skydia">
       <div className="main">
         <Route exact path="/">
           <Enter />
