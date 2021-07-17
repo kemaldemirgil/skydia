@@ -10,7 +10,7 @@ import { FC } from 'react';
 
 const App: FC = () => {
   return (
-    <Router>
+    <Router basename="/">
       <div className="main">
         <Route exact path="/">
           <Enter />
