@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/skydia/static/css/main.28ba3f5c.chunk.css",
-    "main.js": "/skydia/static/js/main.4fae441f.chunk.js",
-    "main.js.map": "/skydia/static/js/main.4fae441f.chunk.js.map",
+    "main.js": "/skydia/static/js/main.9c61241d.chunk.js",
+    "main.js.map": "/skydia/static/js/main.9c61241d.chunk.js.map",
     "runtime-main.js": "/skydia/static/js/runtime-main.cf06df0d.js",
     "runtime-main.js.map": "/skydia/static/js/runtime-main.cf06df0d.js.map",
     "static/css/2.213895f5.chunk.css": "/skydia/static/css/2.213895f5.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.213895f5.chunk.css",
     "static/js/2.726e4993.chunk.js",
     "static/css/main.28ba3f5c.chunk.css",
-    "static/js/main.4fae441f.chunk.js"
+    "static/js/main.9c61241d.chunk.js"
   ]
 }
