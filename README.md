@@ -10,23 +10,23 @@
 
 <h1 align = "center">Weather Application</h1>
 
-[Skydia Deployed Link](https://kemaldemirgil.github.io/skydia)
+ ### 🚩 [Skydia Deployed Application](https://kemaldemirgil.github.io/skydia)
 
-## About:
+## 🌇 About:
 **Skydia** is a simple weather application which allows users to search for the current weather of the desired city, it also allows adding cities to their **Favourites List** which could be accessed anytime on their local computer. 
 
-## Usage:
+## 📓 Usage:
 - Once navigated to the [application](https://kemaldemirgil.github.io/skydia), an **Entry Page** will be presented, simply click on the `ENTER` button to view the **Search Page**.
 - In the **Search Page**, enter a city name to get the current weather. Hit the `Save to Favourites` button to add the city to your **Favourites list**.
 - The **List** could be accessed through the *Navigation Bar* in the upper right corner of the page.
 - In the **My Favourites Page**, select the city to view it's current weather, this will generate the current weather of that city. More information could be accessed through the `Click for more information` link at the bottom of the card.
 - The city can be removed from the **Favourites List** by clicking on the `Delete City` button.
 
-## Issues:
+## 📮 Issues:
 If any issues or bugs are present, please submit a ticket to the `Issues` tab or contact me through kemal.demirgil@hotmail.com and I will get back to it as soon as possible.\
 ![](/src/assets/issue.gif)
 
-## Installation:
+## 🔩 Installation:
 `Skydia` could also be running in your local computer however, I wouldn't recommend it since you would be needing an `API KEY` from [Open Weather API](https://openweathermap.org/api) and obtaining one could take *10 minutes to 2 hours*. Also, a `.env` file needs to be added to the root of the application using the following format for `React` applications.
 ```env
 REACT_APP_API_KEY=<YOUR_API_KEY_HERE>
@@ -41,9 +41,9 @@ After installing the dependencies, run;
 npm run start
 ```
 to start the application on `http://localhost:3000`.
-## Tools & Dependencies:
+## 🧰 Tools & Dependencies:
 
-Tools & Frameworks      
+✨ Tools & Frameworks      
 :-------------------------:
 ReactJS
 TypeScript
@@ -72,14 +72,14 @@ AOS
   }
 ```
 
-## Images:
+## 🌄 Images:
 
-Entry Page                    |Search Page                  |Favourites Page
+📃 Entry Page                    | 📃 Search Page                  | 📃 Favourites Page
 :-------------------------:   |:-------------------------:  |:-----------------:
 ![](/src/assets/ss1.png)      |![](/src/assets/ss2.png)     |![](/src/assets/ss3.png)
 
 
-## Notes & Improvements:
+## 📊 Notes & Improvements:
 Building this application using `Typescript` was challenging at the beginning, since it was my first time, it took many hours of troubleshooting to understand the flow of things however, once I was able to get comfortable with it, I realized the power that `Typescript` offers. Even though, writing strict code and specifying every type of element can be time-consuming for small projects like this one, on bigger applications it could definitely save many possible errors that might occur.
 > I am aware that the `Favourites Page` should've displayed each city in a card format rather than selecting it through the dropdown however, unfortunately many bugs were present in my attempt on it. I even tried doing it using `Lazy Loading` where the user would click on a city card then the data would be fetched displaying the current weather but, that also brought many bugs to it. Furthermore, I understand the requirements and, this problem still could've been fixed however, in this case I was too focused on delivering the result as soon as possible.
 
@@ -89,6 +89,6 @@ Building this application using `Typescript` was challenging at the beginning, s
   <a href="mailto: kemal.demirgil@hotmail.com" target="_blank"><img src="https://img.shields.io/badge/Gmail-D14836?style=plastic&logo=gmail&logoColor=white"/></a>
 </p>
 
-## License:
+## ©️ License:
 Copyright © Kemal Demirgil. All rights reserved.
 Licensed under the [MIT](https://github.com/kemaldemirgil/skydia/blob/main/LICENSE) license.
