@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/skydia/static/css/main.28ba3f5c.chunk.css",
-    "main.js": "/skydia/static/js/main.19bbedbf.chunk.js",
-    "main.js.map": "/skydia/static/js/main.19bbedbf.chunk.js.map",
+    "main.css": "/skydia/static/css/main.1e43f511.chunk.css",
+    "main.js": "/skydia/static/js/main.3cbf156b.chunk.js",
+    "main.js.map": "/skydia/static/js/main.3cbf156b.chunk.js.map",
     "runtime-main.js": "/skydia/static/js/runtime-main.cf06df0d.js",
     "runtime-main.js.map": "/skydia/static/js/runtime-main.cf06df0d.js.map",
     "static/css/2.213895f5.chunk.css": "/skydia/static/css/2.213895f5.chunk.css",
-    "static/js/2.726e4993.chunk.js": "/skydia/static/js/2.726e4993.chunk.js",
-    "static/js/2.726e4993.chunk.js.map": "/skydia/static/js/2.726e4993.chunk.js.map",
+    "static/js/2.02910557.chunk.js": "/skydia/static/js/2.02910557.chunk.js",
+    "static/js/2.02910557.chunk.js.map": "/skydia/static/js/2.02910557.chunk.js.map",
     "index.html": "/skydia/index.html",
     "static/css/2.213895f5.chunk.css.map": "/skydia/static/css/2.213895f5.chunk.css.map",
-    "static/css/main.28ba3f5c.chunk.css.map": "/skydia/static/css/main.28ba3f5c.chunk.css.map",
-    "static/js/2.726e4993.chunk.js.LICENSE.txt": "/skydia/static/js/2.726e4993.chunk.js.LICENSE.txt",
+    "static/css/main.1e43f511.chunk.css.map": "/skydia/static/css/main.1e43f511.chunk.css.map",
+    "static/js/2.02910557.chunk.js.LICENSE.txt": "/skydia/static/js/2.02910557.chunk.js.LICENSE.txt",
     "static/media/semantic.min.css": "/skydia/static/media/outline-icons.ddae9b1b.woff",
     "static/media/sky.0f7d682f.mp4": "/skydia/static/media/sky.0f7d682f.mp4"
   },
   "entrypoints": [
     "static/js/runtime-main.cf06df0d.js",
     "static/css/2.213895f5.chunk.css",
-    "static/js/2.726e4993.chunk.js",
-    "static/css/main.28ba3f5c.chunk.css",
-    "static/js/main.19bbedbf.chunk.js"
+    "static/js/2.02910557.chunk.js",
+    "static/css/main.1e43f511.chunk.css",
+    "static/js/main.3cbf156b.chunk.js"
   ]
 }
