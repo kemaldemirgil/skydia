@@ -10,8 +10,9 @@
 .favourite-cities-container {
   background: linear-gradient(-45deg, #ee525225, #3c72e72a, #23cfd564, #23d5ab2a);
   background-size: 400% 400%;
-  animation: gradient 30s ease infinite;
+  animation: gradient 15s ease infinite;
 	min-height: 100vh;
+	z-index: -2;
 }
 
 .fav-wrapper {
@@ -24,6 +25,8 @@
 	display: flex;
 	justify-content: center;
 	text-align: center;
+	z-index: 10;
+	position: relative;
 }
 
 .city-select {
@@ -39,10 +42,10 @@
 	animation: colorChange 5s infinite;
 }
 
-
 .fav-weather-data {
 	padding: 3rem 1rem;
 	max-width: 40rem;
+	z-index:1;
 }
 
 .fav-weather-data div {
@@ -53,8 +56,8 @@
 .fav-city-title {
 	font-size: 2.5rem !important;
 	font-family: var(--def) !important;
+	animation: colorChange 5s infinite;
 }
-
 
 .fav-weather-data p {
 	font-size: 1.5rem !important;
@@ -78,4 +81,16 @@
   0% { color: #00d9ff;; }
   50% { color: #ff00f7; }
   100% { color: #00d9ff; }
+}
+
+@media screen and (max-width: 675px) {
+  .fav-wrapper div h1 {
+		font-size: 3rem;
+	}
+}
+
+@media screen and (max-width: 400px) {
+  .fav-wrapper div h1 {
+		font-size: 2.5rem;
+	}
 }

@@ -46,13 +46,13 @@ const Body: FC = () => {
     <>
       <div className="body-container2">
         <Container className="body-wrapper">
-          <h1 className="title-desc">Search for a city</h1>
-          <form className="ui action huge input search-wrapper" onSubmit={formSubmit}>
+          <h1 className="title-desc" data-aos="zoom-in-down">Search for a city</h1>
+          <form className="ui action huge input search-wrapper" data-aos="zoom-in" onSubmit={formSubmit}>
             <input 
               type="text" 
               placeholder="Enter a city name"
               value={city}
-              onChange={formChange}  
+              onChange={formChange}
             />
             <button className="ui huge black button">Search</button>
           </form>

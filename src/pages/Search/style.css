@@ -15,9 +15,9 @@
 .body-container2 {
   min-height: 100vh;
   display: flex;
-  background: linear-gradient(-45deg, #e8e8e8, #f2f2f2, #f3f3f3, #e4e4e4);
+  background: linear-gradient(-45deg, #dcdcdc, #f2f2f2, #f3f3f3, #c2c2c2);
   background-size: 400% 400%;
-  animation: gradient2 30s ease infinite;
+  animation: gradient2 15s ease infinite;
 }
 
 .body-container2 * {
@@ -55,6 +55,7 @@
   font-size: 5rem;
   text-align: center;
   margin-bottom: 3rem;
+  animation: colorChange2 5s infinite;
 }
 
 .fav-button {
@@ -106,6 +107,16 @@
   justify-content: center;
 }
 
+.caret-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.caret {
+  animation: bounce 2s infinite;
+}
+
 @keyframes gradient2 {
 	0% {
 		background-position: 0% 50%;
@@ -116,6 +127,24 @@
 	100% {
 		background-position: 0% 50%;
 	}
+}
+
+@keyframes colorChange2{
+  0% { color: #db2828; }
+  50% { color: #272727; }
+  100% { color: #db2828; }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
 }
 
 /* @media................................................................... */

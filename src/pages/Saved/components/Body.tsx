@@ -60,7 +60,7 @@ const Body = () => {
         tempComment = "Enjoy the great weather!"
         tempImg = "https://p4.wallpaperbetter.com/wallpaper/1021/17/157/summer-scenery-wallpaper-preview.jpg"
       } else {
-        tempComment = "It's pretty hot don't forget your sunglasses!"
+        tempComment = "It's pretty hot, don't forget your sunglasses!"
         tempImg = "https://www.teahub.io/photos/full/288-2884225_temperature-hot-weather.jpg"
       }
       setCitiesData(data)
@@ -90,8 +90,8 @@ const Body = () => {
   return (
     <div className="fav-wrapper">
       <div>
-        <h1>Favourite Cities</h1>
-        <div className="city-select-container">
+        <h1 data-aos="zoom-in-up"><Icon name='heart' size='small'/>Favourite Cities<Icon name='heart' size='small'/></h1>
+        <div className="city-select-container" data-aos="zoom-out-down">
           <Dropdown
             placeholder='Select a city'
             fluid
@@ -106,31 +106,33 @@ const Body = () => {
         {
           (displayCard && citiesData.name !== "")
           ?
-          <div className="fav-weather-data">
-            <Card fluid>
-              <Image src={tempImg} wrapped ui={false} />
-              <Card.Content>
-                <Card.Header className="fav-city-title"><Icon name='map marker alternate' size='small' />{citiesData.name} {citiesData.sys.country}</Card.Header>
-                <Card.Meta>
-                  <span className='date'>{tempComment}</span>
-                </Card.Meta>
-                <Card.Description>
-                  <p><Icon name='circle outline' size='tiny' />Current Temp: {citiesData.main.temp}<sup>&#8451;</sup></p>
-                  <p><Icon name='sun' size='small' />Max Temp: {citiesData.main.temp_max}<sup>&#8451;</sup></p>
-                  <p><Icon name='snowflake' size='small' />Min Temp: {citiesData.main.temp_min}<sup>&#8451;</sup></p>
-                  <p><Icon name='circle outline' size='tiny' />Feels Like: {citiesData.main.feels_like}<sup>&#8451;</sup></p>
-                  <p><Icon name='rain' size='small' />Humidity: {citiesData.main.humidity}%</p>
-                  <p><Icon name='leaf' size='small' />Wind Speed: {citiesData.wind.speed}m/s</p>
-                </Card.Description>
-              </Card.Content>
-              <Card.Content extra>
-              <Button fluid color="red" icon onClick={deleteCity}>
-                <Icon name='trash' />
-                Delete City
-              </Button>
-              </Card.Content>
-            </Card>
-            <small><a href={`https://www.accuweather.com/en/search-locations?query=${citiesData.name}`} target="_blank" rel="noreferrer">Click for more information</a></small>
+          <div className="fav-wrapper">
+            <div className="fav-weather-data" data-aos="flip-down">
+              <Card fluid>
+                <Image src={tempImg} wrapped ui={false} data-aos="zoom-in" />
+                <Card.Content>
+                  <Card.Header className="fav-city-title" data-aos="fade-up-right"><Icon name='map marker alternate' size='small' />{citiesData.name} {citiesData.sys.country}</Card.Header>
+                  <Card.Meta>
+                    <span className='date' data-aos="fade-up-left">{tempComment}</span>
+                  </Card.Meta>
+                  <Card.Description>
+                    <p data-aos="fade-up-right"><Icon name='circle outline' size='tiny' />Current Temp: {citiesData.main.temp}<sup>&#8451;</sup></p>
+                    <p data-aos="fade-up-left"><Icon name='sun' size='small' />Max Temp: {citiesData.main.temp_max}<sup>&#8451;</sup></p>
+                    <p data-aos="fade-up-right"><Icon name='snowflake' size='small' />Min Temp: {citiesData.main.temp_min}<sup>&#8451;</sup></p>
+                    <p data-aos="fade-up-left"><Icon name='circle outline' size='tiny' />Feels Like: {citiesData.main.feels_like}<sup>&#8451;</sup></p>
+                    <p data-aos="fade-up-right"><Icon name='rain' size='small' />Humidity: {citiesData.main.humidity}%</p>
+                    <p data-aos="fade-up-left"><Icon name='leaf' size='small' />Wind Speed: {citiesData.wind.speed}m/s</p>
+                  </Card.Description>
+                </Card.Content>
+                <Card.Content extra>
+                <Button fluid color="red" icon onClick={deleteCity} data-aos="fade-up-right">
+                  <Icon name='trash' />
+                  Delete City
+                </Button>
+                </Card.Content>
+              </Card>
+              <small data-aos="zoom-in"><a href={`https://www.accuweather.com/en/search-locations?query=${citiesData.name}`} target="_blank" rel="noreferrer">Click for more information</a></small>
+            </div>
           </div>
           :
           <></>

@@ -62,14 +62,16 @@ const Weather: FC<Props>  = ({data}) => {
   // console.log(data)
   return (
     <div className="weather-container">
-      <h1><Icon name='map marker alternate' size='tiny' />{data.name}  
-        <span> {data.sys.country} 
-        </span>
+      <h1 data-aos="fade-up-right"><Icon name='map marker alternate' size='tiny' />{data.name}  
+        <span> {data.sys.country}</span>
       </h1>
-      <div className="fav-button">
+      <div className="caret-container" data-aos="fade-up" data-aos-duration="6000">
+        <Icon name='caret down' className="caret" size='big' />
+      </div>
+      <div className="fav-button" data-aos="fade-down">
         <button className="ui red big button" onClick={() => favButton(data.name)}><Icon name='heart' size='small' /> Save to Favourites</button>
       </div>
-      <div className="current-weather">
+      <div className="current-weather" data-aos="flip-up">
         <div className="ui red fluid card">
           <div className="content">
             <Label as='span' color='red' ribbon>
@@ -80,20 +82,20 @@ const Weather: FC<Props>  = ({data}) => {
               <Grid stackable textAlign='center'>
                 <Grid.Row columns={2}>
                   <Grid.Column>
-                  <p><Icon name='circle outline' size='tiny' />Current Temp: {data.main.temp}<sup>&#8451;</sup></p>
-                  <p><Icon name='sun' size='small' />Max Temp: {data.main.temp_max}<sup>&#8451;</sup></p>
-                  <p><Icon name='snowflake' size='small' />Min Temp: {data.main.temp_min}<sup>&#8451;</sup></p>
+                  <p data-aos="fade-up-right"><Icon name='circle outline' size='tiny' />Current Temp: {data.main.temp}<sup>&#8451;</sup></p>
+                  <p data-aos="fade-left"><Icon name='sun' size='small' />Max Temp: {data.main.temp_max}<sup>&#8451;</sup></p>
+                  <p data-aos="fade-up-right"><Icon name='snowflake' size='small' />Min Temp: {data.main.temp_min}<sup>&#8451;</sup></p>
                   <br/>
-                  <p className="details">Weather Description: {data.weather[0].description}
+                  <p className="details" data-aos="fade-up-left">Weather Description: {data.weather[0].description}
                     <img src={`http://openweathermap.org/img/wn/${data.weather[0].icon}.png`} width="50" height="50" alt="logo"/>
                   </p>
                   </Grid.Column>
                   <Grid.Column>
-                  <p><Icon name='circle outline' size='tiny' />Feels Like: {data.main.feels_like}<sup>&#8451;</sup></p>
-                  <p><Icon name='rain' size='small' />Humidity: {data.main.humidity}%</p>
-                  <p><Icon name='leaf' size='small' />Wind Speed: {data.wind.speed}m/s</p>
+                  <p data-aos="fade-right"><Icon name='circle outline' size='tiny' />Feels Like: {data.main.feels_like}<sup>&#8451;</sup></p>
+                  <p data-aos="fade-up-left"><Icon name='rain' size='small' />Humidity: {data.main.humidity}%</p>
+                  <p data-aos="fade-up-right"><Icon name='leaf' size='small' />Wind Speed: {data.wind.speed}m/s</p>
                   <br/>
-                  <p className="details">{comment}</p>
+                  <p className="details" data-aos="fade-up-left">{comment}</p>
                   </Grid.Column>
                 </Grid.Row>
               </Grid>
