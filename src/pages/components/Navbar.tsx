@@ -5,6 +5,9 @@ import "./style.css"
 
 export default class Navbar extends Component {
   render() {
+    {
+      console.log('pathname--->' + window.location.pathname)
+    }
     return (
       <div className="nav-container">
         <ul>
