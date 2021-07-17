@@ -29,14 +29,14 @@ const Body: FC = () => {
         const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${process.env.REACT_APP_API_KEY}`);
         if (!res.ok) {
           const resData: Error = await res.json();
-          console.log(resData);
+          console.log(resData.message);
           setOpen(true)
         }
         const resData: WeatherData = await res.json();
         // console.log(resData);
         localStorage.setItem('searchedWeatherData', JSON.stringify(resData));
       }catch(err) {
-        return console.log(err)
+        return err
       }
       setCity("")
     }

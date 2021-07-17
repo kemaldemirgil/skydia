@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import { WeatherData } from '../../../types'
 import { SemanticToastContainer, toast } from 'react-semantic-toasts';
 import { Label, Grid, Icon } from 'semantic-ui-react'
@@ -6,21 +6,11 @@ import { Label, Grid, Icon } from 'semantic-ui-react'
 type Props = {
   data: WeatherData
 }
-
-let storedFavCities: any = localStorage.getItem("fav-city");
-let cities: any = JSON.parse(storedFavCities)
-let cityNames: any = [];
-
-console.log(cities)
-if (storedFavCities !== null) {
-  for (let i = 0; i < cities.length; i++) {
-    cityNames.push(cities[i]);
-  }
-}
+let storedFavCities: any;
+let cities: Array<string>;
+let cityNames: Array<string> = [];
 
 const favButton = (place:string) => {
-  console.log(place)
-  console.log(cityNames)
   if ((cities !== null && cities.includes(place)) || cityNames.includes(place)) {
     toast({
       type: 'warning',
@@ -45,7 +35,19 @@ const favButton = (place:string) => {
 }
 
 const Weather: FC<Props>  = ({data}) => {
+
+  // console.log(data)
+  storedFavCities = localStorage.getItem("fav-city");
+  cities = JSON.parse(storedFavCities)
+  cityNames = [];
   let comment: string;
+
+  if (storedFavCities !== null) {
+    for (let i = 0; i < cities.length; i++) {
+      cityNames.push(cities[i]);
+    }
+  }
+  
   if (data === null) {
     return (null)
   }

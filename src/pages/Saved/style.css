@@ -1,9 +1,66 @@
-.main-container2 {
-  background: linear-gradient(-45deg, #ee5252, #3c72e7, #23cfd5, #23d5ab);
+/* fons................................................................... */
+@import url('https://fonts.googleapis.com/css2?family=Gruppo&family=Josefin+Slab:wght@600&display=swap');
+
+:root {
+  --skydia: 'Gruppo', cursive;
+  --def: 'Josefin Slab', serif;
+}
+
+
+.favourite-cities-container {
+  background: linear-gradient(-45deg, #ee525225, #3c72e72a, #23cfd564, #23d5ab2a);
   background-size: 400% 400%;
   animation: gradient 30s ease infinite;
-	filter: opacity(20%);
+	min-height: 100vh;
 }
+
+.fav-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.city-select-container {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+}
+
+.city-select {
+	max-width: 25rem !important;
+}
+
+.fav-wrapper div h1 {
+	font-size: 5rem;
+	margin-top: 5rem;
+	margin-bottom: 5rem;
+	text-align: center;
+	font-family: var(--skydia);
+	animation: colorChange 5s infinite;
+}
+
+
+.fav-weather-data {
+	padding: 3rem 1rem;
+	max-width: 40rem;
+}
+
+.fav-weather-data div {
+	padding: 1rem 3rem;
+	min-width: 20rem;
+}
+
+.fav-city-title {
+	font-size: 2.5rem !important;
+	font-family: var(--def) !important;
+}
+
+
+.fav-weather-data p {
+	font-size: 1.5rem !important;
+	font-family: var(--def) !important;
+}
+
 
 @keyframes gradient {
 	0% {
@@ -15,4 +72,10 @@
 	100% {
 		background-position: 0% 50%;
 	}
+}
+
+@keyframes colorChange{
+  0% { color: #00d9ff;; }
+  50% { color: #ff00f7; }
+  100% { color: #00d9ff; }
 }

@@ -1,12 +1,12 @@
-import Body from "./components/Body"
 import './style.css'
 import Navbar from "../components/Navbar"
+import Body from "./components/Body"
 
 const index = () => {
   return (
     <>
       <Navbar />
-      <div className="main-container2">
+      <div className="favourite-cities-container">
         <Body />
       </div>
     </>
