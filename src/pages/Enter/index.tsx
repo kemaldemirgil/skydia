@@ -1,9 +1,8 @@
 // imports..........................
-import { FC } from 'react'
-import Header from './components/Header'
-import VideoBG from './components/VideoBG'
-import './style.css'
-
+import { FC } from "react";
+import Header from "./components/Header";
+import VideoBG from "./components/VideoBG";
+import "./style.css";
 
 const Enter: FC = () => {
   return (
@@ -11,7 +10,7 @@ const Enter: FC = () => {
       <VideoBG />
       <Header />
     </div>
-  )
-}
+  );
+};
 
-export default Enter
+export default Enter;

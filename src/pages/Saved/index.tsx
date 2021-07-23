@@ -1,8 +1,8 @@
 // imports..........................
-import { FC } from 'react'
-import './style.css'
-import Navbar from "../components/Navbar"
-import Body from "./components/Body"
+import { FC } from "react";
+import "./style.css";
+import Navbar from "../components/Navbar";
+import Body from "./components/Body";
 
 const index: FC = () => {
   return (
@@ -12,7 +12,7 @@ const index: FC = () => {
         <Body />
       </div>
     </>
-  )
-}
+  );
+};
 
-export default index
+export default index;
